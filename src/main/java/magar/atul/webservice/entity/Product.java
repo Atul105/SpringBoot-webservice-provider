@@ -2,13 +2,35 @@ package magar.atul.webservice.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="product_data")
 public class Product {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="product_id")
 	private int id;
+	
+	@Column(name="product_name")
 	private String name;
+	
+	@Column(name="product_price")
 	private double price;
+	
+	@Column(name="product_description")
 	private String description;
+	
+	@Column(name="product_isAvailable")
 	private boolean isAvailable;
+	
+	@Column(name="created_At")
 	private Date createdAt;
 	
 	//constructor
